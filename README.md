@@ -15,5 +15,5 @@ docker run --rm -it -v $PWD/certs:/etc/squid/certs -w /etc/squid/certs ilaipi/sq
 docker run --rm -it -v $PWD/certs:/etc/squid/certs -w /etc/squid/certs ilaipi/squid-https openssl req -new -key proxy.key -out proxy.csr
 docker run --rm -it -v $PWD/certs:/etc/squid/certs -w /etc/squid/certs ilaipi/squid-https openssl x509 -req -days 365 -in proxy.csr -signkey proxy.key -out proxy.crt
 
-docker run --restart always --name squid-container -v $PWD/certs:/etc/squid/certs -p 30128:3128 -p 30129:3129 ilaipi/squid-https
+docker run --restart always --name squid-container -dit -v $PWD/certs:/etc/squid/certs -p 30128:3128 -p 30129:3129 ilaipi/squid-https
 ```
