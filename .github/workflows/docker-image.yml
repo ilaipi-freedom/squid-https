@@ -36,4 +36,4 @@ jobs:
 
     - name: Push Latest to Docker Hub
       run:
-        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/https-proxy-test:latest
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/squid-https:latest
